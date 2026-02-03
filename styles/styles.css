@@ -1,9 +1,10 @@
 :root{
-    --background-black: #110720;
+    --background-accent: #110720;
     --white-text: #f5f5f5;
     --light-gray: #b3b3b3;
     --dark-gray: #8b8b8b;
     --hover-purple: #7334D2;
+    --light-purple: #C27AFF;
 }
 
 * {
@@ -14,7 +15,7 @@
 }
 
 body {
-    background-color: var(--background-black);
+    background-color: var(--background-accent);
     color: var(--white-text);
     line-height: 1.6;
 }

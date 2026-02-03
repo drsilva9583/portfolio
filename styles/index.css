@@ -1,0 +1,36 @@
+.hero-content {
+    text-align: center;
+    margin-top: 2rem;
+}
+.hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+.hero-title .highlight {
+    color: var(--light-purple);
+}
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+.hero-description {
+    color: var(--light-gray);
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+.hero-button {
+    background-color: var(--background-accent);
+    color: var(--white-text);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 999px;
+    border: 2px solid var(--hover-purple);
+    margin: 0 1rem;
+}
+.hero-button:hover {
+    background-color: var(--hover-purple);
+    transition: all 0.5s ease-in-out;
+}
