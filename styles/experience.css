@@ -1,0 +1,114 @@
+.experience-header {
+    text-align: center;
+    padding: 6rem 2rem 5rem 2rem;
+    background: linear-gradient(135deg, var(--background-accent) 10%, #764ba2 100%);
+}
+.experience-header h1 {
+    font-size: 3rem;
+    color: var(--white-text);
+}
+.experience-header p {
+    color: var(--light-gray);
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+.role-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+}
+
+/* Timeline */
+.roles {
+    width: min(860px, 95%);
+    position: relative;
+    padding-left: 64px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* Vertical Timeline Line */
+.roles::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 32px;
+    width: 4px;
+    bottom: 20px;
+    background: var(--hover-purple);
+    border-radius: 2px;
+}
+
+.role-card {
+    border-radius: 16px;
+    position: relative;
+    margin-bottom: 2rem;
+    padding: 1rem 1.5rem 1.5rem 2.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid var(--hover-purple);
+}
+
+/* Timeline Dot*/
+.role-card::before {
+    content: "";
+    position: absolute;
+    left: -43px;
+    top: 18px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--hover-purple);
+    border: 4px solid var(--white-text);
+}
+
+.role-card .card-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.role-card h2 {
+    margin-top: 0;
+    color: var(--white-text);
+}
+.role-card h3 {
+    color: var(--light-purple);
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.role-card p {
+    color: var(--white-text);
+    line-height: 1.4;
+    border: 2px solid var(--hover-purple);
+    background: var(--light-background-accent);
+    padding: 0.25rem 0.5rem;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    border-radius: 999px;
+}
+.role-card ul {
+    color: var(--light-gray);
+    margin-left: 1.5rem;
+    line-height: 1.6;
+}
+
+
+@media (max-width: 720px) {
+    .roles {
+        padding-left: 48px;
+    }
+    .roles::before {
+        left: 24px;
+    }
+    .role-card::before {
+        left: -24px;
+        top: 16px;
+        width: 10px;
+        height: 10px;
+    }
+}
