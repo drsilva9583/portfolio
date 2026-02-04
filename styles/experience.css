@@ -91,6 +91,14 @@
     margin-bottom: 0.5rem;
     border-radius: 999px;
 }
+.acquired-skills p {
+    display: inline-block;
+    margin-right: 0.5rem;
+    margin-top: 1rem;
+    color: var(--light-gray);
+    background-color: var(--light-background-accent);
+    font-size: 0.9rem;
+}
 .role-card ul {
     color: var(--light-gray);
     margin-left: 1.5rem;
