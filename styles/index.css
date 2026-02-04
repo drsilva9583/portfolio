@@ -27,9 +27,9 @@
     background-color: var(--background-accent);
     color: var(--white-text);
     border: none;
-    padding: 0.75rem 1.5rem;
     font-size: 1rem;
     font-weight: 600;
+    padding: 0.75rem 0;
     cursor: pointer;
     border-radius: 999px;
     border: 2px solid var(--hover-purple);
@@ -38,6 +38,12 @@
 .hero-button:hover {
     background-color: var(--hover-purple);
     transition: all 0.5s ease-in-out;
+}
+.hero-button a {
+    color: var(--white-text);
+    text-decoration: none;
+    border-radius: 999px;
+    padding: 0.75rem 1.5rem;
 }
 
 .hero-image{
@@ -140,9 +146,12 @@
         margin: 1rem 1rem;
     }
     .hero-button {
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 0rem;
         font-size: 0.9rem;
         margin: 0.5rem 0.5rem;
+    }
+    .hero-button a {
+        padding: 0.5rem 2rem;
     }
     .headshot img {
         width: 200px;
