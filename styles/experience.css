@@ -1,6 +1,7 @@
 .experience-header {
     text-align: center;
-    padding: 6rem 2rem 5rem 2rem;
+    margin-top: 1rem;
+    padding: 5rem 2rem;
     background: linear-gradient(135deg, var(--background-accent) 10%, #764ba2 100%);
 }
 .experience-header h1 {
@@ -65,7 +66,7 @@
     border: 4px solid var(--white-text);
 }
 
-.role-card .card-top {
+.role-card .card-top, .project-card .card-top {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -81,18 +82,21 @@
     font-size: 1.3rem;
     font-weight: 600;
 }
-.role-card p {
+.acquired-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+.role-card p, .project-card p {
     color: var(--white-text);
     line-height: 1.4;
     border: 2px solid var(--hover-purple);
     background: var(--light-background-accent);
     padding: 0.25rem 0.5rem;
-    display: inline-block;
     margin-bottom: 0.5rem;
     border-radius: 999px;
 }
 .acquired-skills p {
-    display: inline-block;
     margin-right: 0.5rem;
     margin-top: 1rem;
     color: var(--light-gray);
@@ -104,19 +108,138 @@
     margin-left: 1.5rem;
     line-height: 1.6;
 }
+.role-card:hover {
+    border-color: var(--light-purple);
+    box-shadow: 0 4px 15px var(--light-gray-opaque);
+    transition: all 0.3s ease-in-out;
+}
 
+/* Projects */
+.projects-header {
+    padding: 2rem;
+    background-color: #17092c;
+}
+.projects-header h1 {
+    text-align: center;
+    font-size: 3rem;
+    color: var(--white-text);
+}
+.projects-header p {
+    text-align: center;
+    color: var(--light-gray);
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+.project-container {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.project-card {
+    border-radius: 16px;
+    position: relative;
+    padding: 1rem 2rem;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 2px solid var(--hover-purple);
+}
+.project-card .card-top p{
+    color: var(--white-text);
+    font-size: 0.9rem;
+}
+.project-card h2 {
+    margin-top: 0;
+    color: var(--white-text);
+}
+.project-card h3 {
+    color: var(--light-purple);
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.project-card ul {
+    color: var(--light-gray);
+    margin-left: 1.5rem;
+    line-height: 1.6;
+}
+.project-card .acquired-skills p {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+.project-link {
+    display: block;
+    flex: 0 0 40%;
+    min-width: 280px;
+    text-decoration: none;
+    color: inherit;
+}
+.project-link:hover .project-card {
+    border-color: var(--light-purple);
+    scale: 1.02;
+    box-shadow: 0 4px 15px var(--light-gray-opaque);
+    transition: all 0.3s ease-in-out;
+}
+
+footer {
+    margin-top: 0;
+}
+
+
+@media (max-width: 920px) {
+    .project-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .project-card {
+        width: 100%;
+    }
+    .project-card .card-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .project-card .card-top p {
+        font-size: 0.8rem;
+        text-align: center;
+    }
+    .project-card .acquired-skills p {
+        font-size: 0.8rem;
+        margin: 0.25rem 0.5rem 0 0;
+    }
+    .project-link {
+        flex: 0 0 90%;
+    }
+}
 
 @media (max-width: 720px) {
     .roles {
         padding-left: 48px;
     }
     .roles::before {
-        left: 24px;
+        left: 20px;
+        top: 40px;
+        bottom: 32px;
     }
     .role-card::before {
-        left: -24px;
-        top: 16px;
+        left: -36px;
+        top: 24px;
         width: 10px;
         height: 10px;
+    }
+    .role-card .card-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .role-card .card-top p {
+        font-size: 0.8rem;
+        text-align: center;
+    }
+    .role-card .acquired-skills p {
+        font-size: 0.8rem;
+        margin: 0.25rem 0.5rem 0 0;
     }
 }
