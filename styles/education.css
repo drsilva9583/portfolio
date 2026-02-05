@@ -1,0 +1,206 @@
+/* Header Styles */
+.education-header {
+    text-align: center;
+    margin-top: 1rem;
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, var(--background-accent) 10%, #764ba2 100%);
+}
+.education-header h1 {
+    font-size: 3rem;
+    color: var(--white-text);
+}
+.education-header p {
+    color: var(--light-gray);
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+/* Academic Section */
+.section-title {
+    text-align: center;
+    margin: 2rem 0;
+    color: var(--hover-purple);
+    font-size: 2rem;
+}
+
+.academic-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+}
+.academic-card {
+    border-radius: 16px;
+    position: relative;
+    margin-bottom: 2rem;
+    padding: 1rem 1.5rem 1.5rem 2.5rem;
+    width: 100%;
+    max-width: 800px;
+    box-sizing: border-box;
+    border: 2px solid var(--hover-purple);
+}
+.academic-inline {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+.academic-card h2 {
+    margin-top: 0;
+    color: var(--white-text);
+}
+
+.titles {
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--light-purple) !important; 
+}
+.dates {
+    font-size: 0.9rem;
+    color: var(--light-gray);
+}
+.card-text {
+    line-height: 1.6;
+    color: var(--light-gray);
+    margin: 0.5rem 0;
+}
+
+.academic-card ul {
+    display: flex;
+    list-style: none;
+}
+.academic-card li {
+    font-size: 0.9rem;
+    margin: 0.5rem 1rem 0 0;
+    border: 2px solid var(--hover-purple);
+    border-radius: 999px;
+    padding: 0.25rem 0.5rem;
+    background-color: var(--light-gray-opaque);
+    color: var(--light-gray);
+}
+
+.academic-card:hover, .leadership-card:hover, .certification-card:hover {
+    border-color: var(--light-purple);
+    box-shadow: 0 4px 15px var(--light-gray-opaque);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Leadership Section */
+.leadership-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 2rem 2rem 2rem;
+    background-color: #17092c;
+}
+.leadership-title {
+    color: var(--white-text);
+}
+.leadership-card {
+    border-radius: 16px;
+    position: relative;
+    margin-bottom: 2rem;
+    padding: 1rem 1.5rem 1.5rem 2.5rem;
+    width: 100%;
+    max-width: 700px;
+    box-sizing: border-box;
+    border: 2px solid var(--hover-purple);
+}
+.leadership-card p {
+    line-height: 1.6;
+}
+.leadership-card ul li {
+    color: var(--light-gray);
+}
+
+/* Sponsorships */
+.sponsorships {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.sponsorships p {
+    text-align: center;
+    color: var(--light-gray);
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+.sponsor-logos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.sponsor-logo {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+    filter: brightness(150%);
+}
+
+/* Certification Section */
+.certification-section {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 0 2rem 2rem 2rem;
+}
+.certification-section h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--white-text);
+}
+.certification-card .titles {
+    font-size: 1.5rem;
+}
+.certification-section p {
+    text-align: center;
+    color: var(--light-gray);
+    margin-top: 0.5rem;
+}
+.certification-card {
+    flex: 0 0 45%;
+    border-radius: 16px;
+    position: relative;
+    padding: 1rem 1.5rem 1.5rem 1.5rem;
+    width: 100%;
+    max-width: 700px;
+    box-sizing: border-box;
+    border: 2px solid var(--hover-purple);
+}
+.certification-card p {
+    line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    margin-top: 0;
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+    .academic-card {
+        padding: 1rem;
+    }
+    .academic-inline {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .academic-card ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+        text-align: center;
+    }
+    .sponsor-logo {
+        width: 100px;
+    }
+    .certification-card {
+        flex: 0 0 100%;
+    }
+}
