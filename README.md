@@ -1,1 +1,3 @@
-# portfolio
+Diego Silva's Portfolio
+========================
+Welcome to my portfolio! I'm a passionate Full Stack Developer with a strong background in Computer Science and Engineering. I specialize in creating impactful software solutions that make a difference. Explore my projects, skills, and experience to see how I can contribute to your next project or team. Let's connect and create something amazing together!
