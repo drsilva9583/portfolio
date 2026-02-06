@@ -30,6 +30,7 @@ portfolio/
 ├── experience.html         # Professional experience & projects
 ├── education.html          # Education background
 ├── contact.html            # Contact form
+├── images/                 # Image assets (profile picture, company logos)
 ├── styles/
 │   ├── styles.css         # Global styles
 │   ├── index.css          # Home page styles
