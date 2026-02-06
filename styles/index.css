@@ -24,26 +24,24 @@
     margin-bottom: 2rem;
 }
 .hero-button {
+    text-decoration: none;
+    display: inline-block;
+    flex: 0 0 auto;
+    margin: 0 1rem;
     background-color: var(--background-accent);
     color: var(--white-text);
     border: none;
     font-size: 1rem;
     font-weight: 600;
-    padding: 0.75rem 0;
+    padding: 0.75rem 1.5rem;
     cursor: pointer;
     border-radius: 999px;
     border: 2px solid var(--hover-purple);
-    margin: 0 1rem;
+    box-sizing: border-box;
 }
 .hero-button:hover {
     background-color: var(--hover-purple);
     transition: all 0.5s ease-in-out;
-}
-.hero-button a {
-    color: var(--white-text);
-    text-decoration: none;
-    border-radius: 999px;
-    padding: 0.75rem 1.5rem;
 }
 
 .hero-image{
@@ -103,7 +101,7 @@
     padding: 1rem;
     width: 290px;
 }
-.skills-grid h3 {
+.skills-grid h2 {
     color: var(--light-purple);
     font-size: 1.3rem;
 }
@@ -146,12 +144,11 @@
         margin: 1rem 1rem;
     }
     .hero-button {
-        padding: 0.5rem 0rem;
-        font-size: 0.9rem;
-        margin: 0.5rem 0.5rem;
-    }
-    .hero-button a {
         padding: 0.5rem 2rem;
+        font-size: 0.9rem;
+    }
+    .hero-content a {
+        margin: 1rem 1rem;
     }
     .headshot img {
         width: 200px;
