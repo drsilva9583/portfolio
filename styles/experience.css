@@ -1,245 +1,123 @@
-.experience-header {
-    text-align: center;
-    margin-top: 1rem;
-    padding: 5rem 2rem;
-    background: linear-gradient(135deg, var(--background-accent) 10%, #764ba2 100%);
-}
-.experience-header h1 {
-    font-size: 3rem;
-    color: var(--white-text);
-}
-.experience-header p {
-    color: var(--light-gray);
-    font-size: 1.2rem;
-    margin-top: 0.5rem;
-}
-
-.role-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem 1rem;
-    box-sizing: border-box;
-}
-
-/* Timeline */
-.roles {
-    width: min(860px, 95%);
+/* ───────── Timeline ───────── */
+.timeline {
     position: relative;
-    padding-left: 64px;
-    margin: 0 auto;
-    box-sizing: border-box;
+    max-width: 780px;
+    margin: 2.5rem auto 0;
+    padding-left: 36px;
 }
 
-/* Vertical Timeline Line */
-.roles::before {
-    content: "";
+.timeline::before {
+    content: '';
     position: absolute;
-    top: 20px;
-    left: 32px;
-    width: 4px;
-    bottom: 20px;
-    background: var(--hover-purple);
+    left: 7px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), rgba(59, 130, 246, 0.15));
     border-radius: 2px;
 }
 
-.role-card {
-    border-radius: 16px;
+.timeline-item {
     position: relative;
     margin-bottom: 2rem;
-    padding: 1rem 1.5rem 1.5rem 2.5rem;
-    width: 100%;
-    box-sizing: border-box;
-    border: 2px solid var(--hover-purple);
 }
 
-/* Timeline Dot*/
-.role-card::before {
-    content: "";
+.timeline-item::before {
+    content: '';
     position: absolute;
-    left: -43px;
-    top: 18px;
+    left: -36px;
+    top: 6px;
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background: var(--hover-purple);
-    border: 4px solid var(--white-text);
+    background: var(--bg-primary);
+    border: 3px solid var(--accent);
+    z-index: 1;
 }
 
-.role-card .card-top, .project-card .card-top {
+.timeline-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem 1.75rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.timeline-card:hover {
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-glow);
+}
+
+.timeline-card-header {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.2rem;
 }
 
-.role-card h2 {
-    margin-top: 0;
-    color: var(--white-text);
+.timeline-card-header h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
 }
-.role-card h3 {
-    color: var(--light-purple);
-    font-size: 1.3rem;
-    font-weight: 600;
+
+.timeline-date {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    padding-top: 0.1rem;
 }
-.acquired-skills {
+
+.timeline-company {
+    font-size: 0.95rem;
+    color: var(--accent-light);
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+}
+
+.timeline-card ul {
+    list-style: disc;
+    padding-left: 1.15rem;
+    margin-bottom: 1.15rem;
+}
+
+.timeline-card li {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin-bottom: 0.3rem;
+}
+
+.timeline-pills {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
-}
-.role-card p, .project-card p {
-    color: var(--white-text);
-    line-height: 1.4;
-    border: 2px solid var(--hover-purple);
-    background: var(--light-background-accent);
-    padding: 0.25rem 0.5rem;
-    margin-bottom: 0.5rem;
-    border-radius: 999px;
-}
-.acquired-skills p {
-    margin-right: 0.5rem;
-    margin-top: 1rem;
-    color: var(--light-gray);
-    background-color: var(--light-background-accent);
-    font-size: 0.9rem;
-}
-.role-card ul {
-    color: var(--light-gray);
-    margin-left: 1.5rem;
-    line-height: 1.6;
-}
-.role-card:hover {
-    border-color: var(--light-purple);
-    box-shadow: 0 4px 15px var(--light-gray-opaque);
-    transition: all 0.3s ease-in-out;
+    gap: 0.4rem;
 }
 
-/* Projects */
-.projects-header {
-    padding: 2rem;
-    background-color: #17092c;
-}
-.projects-header h1 {
-    text-align: center;
-    font-size: 3rem;
-    color: var(--white-text);
-}
-.projects-header p {
-    text-align: center;
-    color: var(--light-gray);
-    font-size: 1.2rem;
-    margin-top: 0.5rem;
-}
-.project-container {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 2rem 1rem;
-    box-sizing: border-box;
-    flex-wrap: wrap;
-    gap: 2rem;
-}
-.project-card {
-    border-radius: 16px;
-    position: relative;
-    padding: 1rem 2rem;
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    border: 2px solid var(--hover-purple);
-}
-.project-card .card-top p{
-    color: var(--white-text);
-    font-size: 0.9rem;
-}
-.project-card h2 {
-    margin-top: 0;
-    color: var(--white-text);
-}
-.project-card h3 {
-    color: var(--light-purple);
-    font-size: 1.3rem;
-    font-weight: 600;
-}
-.project-card ul {
-    color: var(--light-gray);
-    margin-left: 1.5rem;
-    line-height: 1.6;
-}
-.project-card .acquired-skills p {
-    margin-top: 1rem;
-    font-size: 0.9rem;
-}
-.project-link {
-    display: block;
-    flex: 0 0 40%;
-    min-width: 280px;
-    text-decoration: none;
-    color: inherit;
-}
-.project-link:hover .project-card {
-    border-color: var(--light-purple);
-    scale: 1.02;
-    box-shadow: 0 4px 15px var(--light-gray-opaque);
-    transition: all 0.3s ease-in-out;
-}
+/* ───────── Responsive ───────── */
+@media (max-width: 700px) {
+    .timeline {
+        padding-left: 28px;
+    }
 
-footer {
-    margin-top: 0;
-}
+    .timeline::before {
+        left: 5px;
+    }
 
+    .timeline-item::before {
+        left: -28px;
+        width: 12px;
+        height: 12px;
+        top: 8px;
+    }
 
-@media (max-width: 920px) {
-    .project-container {
+    .timeline-card {
+        padding: 1.25rem;
+    }
+
+    .timeline-card-header {
         flex-direction: column;
-        align-items: center;
-    }
-    .project-card {
-        width: 100%;
-    }
-    .project-card .card-top {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-    }
-    .project-card .card-top p {
-        font-size: 0.8rem;
-        text-align: center;
-    }
-    .project-card .acquired-skills p {
-        font-size: 0.8rem;
-        margin: 0.25rem 0.5rem 0 0;
-    }
-    .project-link {
-        flex: 0 0 90%;
-    }
-}
-
-@media (max-width: 720px) {
-    .roles {
-        padding-left: 48px;
-    }
-    .roles::before {
-        left: 20px;
-        top: 40px;
-        bottom: 32px;
-    }
-    .role-card::before {
-        left: -36px;
-        top: 24px;
-        width: 10px;
-        height: 10px;
-    }
-    .role-card .card-top {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-    }
-    .role-card .card-top p {
-        font-size: 0.8rem;
-        text-align: center;
-    }
-    .role-card .acquired-skills p {
-        font-size: 0.8rem;
-        margin: 0.25rem 0.5rem 0 0;
+        gap: 0.35rem;
     }
 }

@@ -1,121 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
-        <link rel="stylesheet" href="styles/styles.css">
-        <link rel="stylesheet" href="styles/education.css">
-        <title>Education</title>
-    </head>
-    <body>
-        <header>
-            <div class="navbar">
-                <h1>DS</h1>
-                <nav>
-                    <ul class="nav-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="experience.html">Experience</a></li>
-                        <li><a href="education.html" class="nav-active">Education</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-        <main>
-            <div class="education-header">
-                <h1>Education</h1>
-                <p>Continous learning and professional development</p>
-            </div>
-            <h2 class="section-title">Academic Background</h2>
-            <div class="academic-section">
-                <div class="academic-card">
-                    <h2>Santa Clara University</h2>
-                    <div class="academic-inline">
-                        <p class="titles">Bachelor of Science in Computer Science & Engineering</p>
-                        <p class="dates">Expected Graduation: June 2027</p>
-                    </div>
-                    <p class="card-text">
-                        <span class="bold">Relevant Coursework</span>: Data Structures & Algorithms, Web Development, Web Usability, Machine Learning, Operating Systems, Object-Oriented Programming, Computer Networks
-                    </p>
-                    <ul>
-                        <li>GPA: 3.53 / 4.0</li>
-                        <li>Dean's Scholarship</li>
-                    </ul>
-                </div>
-                <div class="academic-card">
-                    <h2>Santa Teresa High School</h2>
-                    <div class="academic-inline">
-                        <p class="titles">High School Diploma</p>
-                        <p class="dates">Graduated: June 2023</p>
-                    </div>
-                    <p class="card-text">
-                        Studied fundamental computer science concepts and advanced mathematics
-                    </p>
-                    <p class="card-text">
-                        <span class="bold">AP Courses</span>: Computer Science A, Computer Science Principles, Calculus AB, Spanish Literature, Spanish Language, English Literature, English Language, Biology
-                    </p>
-                    <p class="card-text">
-                        <span class="bold">Extracurriculars</span>: Varsity Soccer Team Captain, California Scholarship Federation Member
-                    </p>
-                    <ul>
-                        <li>Valedictorian</li>
-                        <li>Varsity MVP</li>
-                        <li>National Hispanic Recognition Program Scholar</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="leadership-section">
-                <h2 class="section-title">Leadership Experience</h2>
-                <div class="leadership-card">
-                    <h2 class="leadership-title">Corporate Relations Director</h2>
-                    <div class="academic-inline">
-                        <p class="titles">Society of Hispanic Professional Engineers (SHPE)<br>&emsp;Santa Clara University Chapter</p>
-                        <p class="dates">April 2024 - Present</p>
-                    </div>
-                    <ul>
-                        <li>Secured sponsorships from multiple companies to fund student chapter initiatives and plan numerous technical events</li>
-                        <li>Coordinated events with Corp. Member, <span class="bold">facilitating engagement</span> between <span class="bold">70+ members</span> and industry professionals</li>
-                    </ul>
-                    <div class="sponsorships">
-                        <p><span class="bold">Sponsorships Secured:</span></p>
-                        <div class="sponsor-logos">
-                             <img src="images/Nokia-Logo.png" alt="Nokia Logo" class="sponsor-logo">
-                             <img src="images/Applied_Materials-Logo.wine.png" alt="Applied Materials Logo" class="sponsor-logo">
-                             <img src="images/blach-logo.svg" alt="Blach Construction Logo" class="sponsor-logo">
-                             <img src="images/WhitingTurner-logo.png" alt="Whiting-Turner Logo" class="sponsor-logo">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Diego Silva's education, leadership experience, and certifications, including Santa Clara University Computer Science & Engineering.">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/education.css">
+    <title>Education &mdash; Diego Silva</title>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo"><span>DS</span></a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="education.html" class="active">Education</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+
+        <div class="page-header reveal">
+            <h1>Education</h1>
+            <p>Continuous learning and professional development</p>
+        </div>
+
+        <!-- Academic Background -->
+        <section class="section">
+            <p class="section-label reveal">Academics</p>
+            <h2 class="section-title reveal">Academic Background</h2>
+
+            <div class="academics">
+
+                <div class="academic-card reveal">
+                    <div class="card">
+                        <div class="academic-card-top">
+                            <img src="images/Santa_Clara_U_Seal.svg.png" alt="Santa Clara University seal" class="academic-logo">
+                            <div class="academic-card-top-text">
+                                <div class="academic-card-header">
+                                    <h3>Santa Clara University</h3>
+                                    <span class="academic-date">Expected Graduation: June 2027</span>
+                                </div>
+                                <p class="academic-degree">Bachelor of Science in Computer Science &amp; Engineering</p>
+                            </div>
+                        </div>
+                        <p class="academic-body">
+                            <span class="bold">Relevant Coursework</span>: Data Structures &amp; Algorithms, Web Development, Web Usability, Machine Learning, Software Engineering, Operating Systems, Object-Oriented Programming, Computer Networks, Logic Design, Linear Algebra, Statistics
+                        </p>
+                        <div class="academic-highlights">
+                            <span class="pill">GPA: 3.6 / 4.0</span>
+                            <span class="pill">Dean's Scholarship</span>
                         </div>
                     </div>
                 </div>
-                <div class="leadership-card">
-                    <h2 class="leadership-title">Soccer Team Captain</h2>
-                    <div class="academic-inline">
-                        <p class="titles">Santa Clara Sporting</p>
-                        <p class="dates">Jan 2016 - Jun 2023</p>
+
+                <div class="academic-card reveal">
+                    <div class="card">
+                        <div class="academic-card-top">
+                            <img src="images/santa-teresa-logo.png" alt="Santa Teresa High School logo" class="academic-logo">
+                            <div class="academic-card-top-text">
+                                <div class="academic-card-header">
+                                    <h3>Santa Teresa High School</h3>
+                                    <span class="academic-date">Graduated: June 2023</span>
+                                </div>
+                                <p class="academic-degree">High School Diploma</p>
+                            </div>
+                        </div>
+                        <p class="academic-body">
+                            Studied fundamental computer science concepts and advanced mathematics
+                        </p>
+                        <p class="academic-body">
+                            <span class="bold">AP Courses</span>: Computer Science A, Computer Science Principles, Calculus AB, Spanish Literature, Spanish Language, English Literature, English Language, Biology
+                        </p>
+                        <p class="academic-body">
+                            <span class="bold">Extracurriculars</span>: Varsity Soccer Team Captain, California Scholarship Federation Member
+                        </p>
+                        <div class="academic-highlights">
+                            <span class="pill">Valedictorian</span>
+                            <span class="pill">Varsity MVP</span>
+                            <span class="pill">National Hispanic Recognition Program Scholar</span>
+                        </div>
                     </div>
-                    <ul>
-                        <li> Improved <span class="bold">team cohesion/performance</span> by encouraging camaraderie and positive work ethic across 20+ teammates</li>
-                        <li>Managed and prioritized a demanding schedule of daily practices/games and academic responsibilities</li>
-                        <li> Communicated with teammates and coaches to <span class="bold">proactively resolve challenges</span>, ensuring successful outcomes</li>
-                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- Leadership -->
+        <section class="section leadership">
+            <p class="section-label reveal">Leadership</p>
+            <h2 class="section-title reveal">Leadership Experience</h2>
+
+            <div class="leadership-cards">
+
+                <div class="leadership-card reveal">
+                    <div class="card">
+                        <div class="leadership-card-top">
+                            <img src="images/shpe-logo.png" alt="SHPE logo" class="leadership-logo">
+                            <div class="leadership-card-top-text">
+                                <div class="leadership-card-header">
+                                    <h3>Corporate Relations Director</h3>
+                                    <span class="academic-date">Apr 2024 &ndash; Present</span>
+                                </div>
+                                <p class="leadership-org">Society of Hispanic Professional Engineers (SHPE)<br>Santa Clara University Chapter</p>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>Secured sponsorships from multiple companies to fund student chapter initiatives and plan numerous technical events</li>
+                            <li>Coordinated events with Corp. Member, <span class="bold">facilitating engagement</span> between <span class="bold">70+ members</span> and industry professionals</li>
+                        </ul>
+                        <div class="sponsors">
+                            <p class="sponsors-label">Sponsorships Secured</p>
+                            <div class="sponsor-logos">
+                                <img src="images/Nokia-Logo.png" alt="Nokia" class="sponsor-logo">
+                                <img src="images/Applied_Materials-Logo.wine.png" alt="Applied Materials" class="sponsor-logo">
+                                <img src="images/blach-logo.svg" alt="Blach Construction" class="sponsor-logo">
+                                <img src="images/WhitingTurner-logo.png" alt="Whiting-Turner" class="sponsor-logo">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="leadership-card reveal">
+                    <div class="card">
+                        <div class="leadership-card-top">
+                            <img src="images/santa-clara-sporting-logo.png" alt="Santa Clara Sporting logo" class="leadership-logo">
+                            <div class="leadership-card-top-text">
+                                <div class="leadership-card-header">
+                                    <h3>Soccer Team Captain</h3>
+                                    <span class="academic-date">Jan 2016 &ndash; Jun 2023</span>
+                                </div>
+                                <p class="leadership-org">Santa Clara Sporting</p>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>Improved <span class="bold">team cohesion/performance</span> by encouraging camaraderie and positive work ethic across 20+ teammates</li>
+                            <li>Managed and prioritized a demanding schedule of daily practices/games and academic responsibilities</li>
+                            <li>Communicated with teammates and coaches to <span class="bold">proactively resolve challenges</span>, ensuring successful outcomes</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- Certifications -->
+        <section class="section certifications">
+            <p class="section-label reveal">Certifications</p>
+            <h2 class="section-title reveal">Professional Development</h2>
+
+            <div class="cert-grid">
+                <div class="cert-card reveal">
+                    <div class="card">
+                        <h3>The Complete Python Bootcamp</h3>
+                        <p class="cert-issuer">Udemy</p>
+                        <p class="cert-date">Issued: July 2025</p>
+                    </div>
+                </div>
+                <div class="cert-card reveal">
+                    <div class="card">
+                        <h3>Google AI Essentials</h3>
+                        <p class="cert-issuer">Google</p>
+                        <p class="cert-date">Issued: Aug 2025</p>
+                    </div>
                 </div>
             </div>
-            <h2 class="section-title">Certifications</h2>
-            <div class="certification-section">
-                <div class="certification-card">
-                    <h3>The Complete Python Bootcamp</h3>
-                    <p class="titles">Udemy</p>
-                    <p>Issued: July 2025</p>
-                </div>
-                <div class="certification-card">
-                    <h3>Google AI Essentials</h3>
-                    <p class="titles">Google</p>
-                    <p>Issued: Aug 2025</p>
-                </div>
-            </div>
-        </main>
-        <footer>
-            <p>&copy; 2026 Diego Silva's Website. All Rights Reserved.</p>
-        </footer>
-    </body>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Diego Silva. All rights reserved.</p>
+    </footer>
+
+    <button type="button" class="scroll-to-top" data-scroll-to-top aria-label="Scroll back to top">&uarr;</button>
+    <script src="scripts.js"></script>
+</body>
 </html>
