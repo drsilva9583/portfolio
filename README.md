@@ -1,69 +1,61 @@
-# Diego Silva's Portfolio
+# Diego Silva — Portfolio
 
-Welcome to my personal portfolio website! I'm a passionate **Full Stack Developer** with a strong background in Computer Science and Engineering. I specialize in creating impactful software solutions that make a difference.
+Personal portfolio site showcasing my projects, internship experience, and technical skills. Built with vanilla HTML, CSS, and JavaScript — no frameworks, no bloat.
 
-## 🌐 Live Demo
+**Live:** [drsilva9583.github.io/portfolio](https://drsilva9583.github.io/portfolio/)
 
-Visit my portfolio: https://drsilva9583.github.io/portfolio/
+## Overview
 
-## 📋 Features
+| Page | Description |
+|------|-------------|
+| **Home** | Hero, featured projects, about, and skills |
+| **Experience** | Internship experience (Roku, Intuit) and other work roles |
+| **Education** | Academic background, leadership, certifications |
+| **Contact** | Contact form via Formspree |
 
-- **Responsive Design** — Optimized for desktop, tablet, and mobile devices
-- **Professional Experience** — Timeline view of my work history and roles
-- **Project Showcase** — Personal projects demonstrating my technical skills
-- **Skills Section** — Visual breakdown of my technical competencies
-- **Contact Form** — Easy way to reach out and connect with me
-- **Modern Aesthetics** — Clean, gradient-based design with smooth animations
+## Tech Stack
 
-## 🛠️ Tech Stack
+- **HTML5 / CSS3 / JavaScript** — semantic markup, custom properties, no preprocessors
+- **Google Fonts** — Inter + Space Grotesk
+- **Devicon** — tech stack icons
+- **Formspree** — serverless form submissions
+- **GitHub Pages** — hosting
 
-- **Frontend**: HTML5, CSS3
-- **Design**: Custom CSS with gradient backgrounds and smooth transitions
-- **Form Handling**: Formspree integration for direct email submissions
-- **Hosting**: Github Pages
-
-## 📁 Project Structure
+## Project Structure
 
 ```
 portfolio/
-├── index.html              # Home page
-├── experience.html         # Professional experience & projects
-├── education.html          # Education background
-├── contact.html            # Contact form
-├── images/                 # Image assets (profile picture, company logos)
+├── index.html                # Home — hero, projects, about, skills
+├── experience.html           # Internship & work experience
+├── education.html            # Academics, leadership, certifications
+├── contact.html              # Contact form
+├── scripts.js                # Scroll reveals, mobile nav, scroll-to-top
 ├── styles/
-│   ├── styles.css         # Global styles
-│   ├── index.css          # Home page styles
-│   ├── experience.css     # Experience page styles
-│   └── education.css      # Education page styles
-│   └── contact.css        # Contact page styles
-└── README.md              # This file
+│   ├── styles.css            # Global — design tokens, nav, footer, utilities
+│   ├── index.css             # Home page
+│   ├── experience.css        # Experience page
+│   ├── education.css         # Education page
+│   └── contact.css           # Contact page
+├── images/                   # Headshot, favicons, logos
+└── README.md
 ```
 
-## 🚀 Getting Started
+## Local Development
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/drsilva9583/portfolio.git
-   ```
+```bash
+git clone https://github.com/drsilva9583/portfolio.git
+cd portfolio
+python -m http.server 8000
+```
 
-2. Open `index.html` in your browser or serve locally:
-   ```bash
-   python -m http.server 8000
-   ```
+Then open [localhost:8000](http://localhost:8000).
 
-3. Navigate to `http://localhost:8000`
+## Contact
 
-## 📧 Contact
+- **Email:** [diegos9583@gmail.com](mailto:diegos9583@gmail.com)
+- **LinkedIn:** [linkedin.com/in/diego-roman-silva](https://www.linkedin.com/in/diego-roman-silva/)
+- **GitHub:** [github.com/drsilva9583](https://github.com/drsilva9583)
 
-- **Email**: [diegos9583@gmail.com](mailto:diegos9583@gmail.com)
-- **GitHub**: [github.com/drsilva9583](https://github.com/drsilva9583)
-- **LinkedIn**: *(https://www.linkedin.com/in/diego-roman-silva/)*
+## License
 
-## 📄 License
-
-This project is open source and available under the MIT License.
-
----
-
-**Built by Diego Silva**
+MIT
