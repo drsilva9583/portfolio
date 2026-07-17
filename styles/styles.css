@@ -1,26 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap');
 
 :root {
     --bg-primary: #09090b;
-    --bg-secondary: #111113;
-    --bg-card: #131316;
-    --surface: #18181b;
+    --bg-secondary: color-mix(in oklch, #111113 96%, var(--accent) 4%);
+    --bg-card: color-mix(in oklch, #131316 95%, var(--accent) 5%);
+    --surface: color-mix(in oklch, #18181b 94%, var(--accent) 6%);
 
     --text-primary: #fafafa;
     --text-secondary: #a1a1aa;
-    --text-muted: #71717a;
+    --text-muted: color-mix(in oklch, #85858e 90%, var(--accent) 10%);
 
-    --accent: #3b82f6;
-    --accent-hover: #2563eb;
-    --accent-light: #60a5fa;
-    --accent-cyan: #06b6d4;
-    --accent-glow: rgba(59, 130, 246, 0.12);
+    /* Electric violet — dominant, carries interactive/emphasis weight */
+    --accent: oklch(63% 0.19 291);
+    --accent-hover: oklch(54% 0.20 291);
+    --accent-light: oklch(75% 0.13 291);
+    --accent-glow: oklch(63% 0.19 291 / 0.12);
+
+    /* Signal teal — coequal secondary, carries descriptive/metadata weight */
+    --accent-cyan: oklch(68% 0.14 196);
+    --accent-cyan-light: oklch(80% 0.10 196);
 
     --border: rgba(255, 255, 255, 0.08);
-    --border-hover: rgba(59, 130, 246, 0.5);
+    --border-hover: oklch(63% 0.19 291 / 0.5);
 
-    --gradient: linear-gradient(135deg, #3b82f6, #06b6d4);
-    --gradient-text: linear-gradient(135deg, #60a5fa, #22d3ee);
+    --gradient: linear-gradient(135deg, var(--accent), var(--accent-cyan));
+    --gradient-text: linear-gradient(135deg, var(--accent-light), var(--accent-cyan-light));
 
     --radius-sm: 8px;
     --radius-md: 12px;
@@ -30,13 +34,15 @@
     --max-width: 1120px;
     --nav-height: 64px;
 
-    --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-heading: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    /* Archivo variable (wdth 62–125, wght 100–900) — one family, two voices:
+       expanded-black display vs. normal-width body. Used site-wide. */
+    --font-body: 'Archivo', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-heading: 'Archivo', system-ui, sans-serif;
 
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
     --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.35);
     --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.45);
-    --shadow-glow: 0 0 30px rgba(59, 130, 246, 0.12);
+    --shadow-glow: 0 0 30px oklch(63% 0.19 291 / 0.12);
 }
 
 *,
@@ -70,6 +76,13 @@ h1, h2, h3, h4, h5, h6 {
 a {
     color: inherit;
     text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
 }
 
 img {
@@ -113,15 +126,42 @@ ul {
 }
 
 .nav-logo span {
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--accent-light);
 }
 
 .nav-links {
     display: flex;
     gap: 0.25rem;
+    margin-left: auto; /* no-op without .nav-social; groups links + socials right when present */
+}
+
+.nav-social {
+    display: flex;
+    gap: 0.35rem;
+    margin-left: 0.9rem;
+    padding-left: 0.9rem;
+    border-left: 1px solid var(--border);
+}
+
+.nav-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: var(--radius-sm);
+    color: var(--text-muted);
+    transition: color 0.2s, background-color 0.2s;
+}
+
+.nav-social a:hover {
+    color: var(--text-primary);
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+.nav-social svg {
+    width: 17px;
+    height: 17px;
 }
 
 .nav-links a {
@@ -260,7 +300,7 @@ main {
 
 .btn-primary:hover {
     background: var(--accent-hover);
-    box-shadow: 0 0 24px rgba(59, 130, 246, 0.25);
+    box-shadow: 0 0 24px oklch(63% 0.19 291 / 0.25);
 }
 
 .btn-outline {
@@ -296,8 +336,8 @@ main {
     align-items: center;
     gap: 0.4rem;
     padding: 0.25rem 0.7rem;
-    background: rgba(59, 130, 246, 0.08);
-    border: 1px solid rgba(59, 130, 246, 0.15);
+    background: oklch(63% 0.19 291 / 0.08);
+    border: 1px solid oklch(63% 0.19 291 / 0.15);
     border-radius: 6px;
     font-size: 0.78rem;
     font-weight: 500;
@@ -307,6 +347,7 @@ main {
 
 .pill i {
     font-size: 0.95rem;
+    line-height: 1; /* icon box stays shorter than the text line box — all pills share one height */
 }
 
 .pill-neutral {
@@ -377,7 +418,7 @@ main {
     transform: translateX(-50%);
     width: 500px;
     height: 320px;
-    background: radial-gradient(ellipse, rgba(59, 130, 246, 0.07), transparent 70%);
+    background: radial-gradient(ellipse, oklch(63% 0.19 291 / 0.07), transparent 70%);
     pointer-events: none;
     z-index: -1;
 }
@@ -403,10 +444,48 @@ footer {
     font-size: 0.85rem;
 }
 
+.footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.4rem;
+    flex-wrap: wrap;
+}
+
+.footer-social {
+    display: flex;
+    gap: 0.35rem;
+}
+
+.footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: var(--radius-sm);
+    color: var(--text-muted);
+    transition: color 0.2s, background-color 0.2s;
+}
+
+.footer-social a:hover {
+    color: var(--text-primary);
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+.footer-social svg {
+    width: 16px;
+    height: 16px;
+}
+
 /* ───────── Responsive ───────── */
 @media (max-width: 768px) {
     .nav-toggle {
         display: block;
+    }
+
+    .nav-social {
+        display: none; /* socials stay reachable via footer + closing CTA */
     }
 
     .nav-links {
@@ -462,5 +541,32 @@ footer {
 @media (max-width: 480px) {
     .nav-inner {
         padding: 0 1.25rem;
+    }
+}
+
+/* ───────── Reduced Motion ───────── */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .card,
+    .btn,
+    .scroll-to-top,
+    .hero-contact-link,
+    .hero-contact-link span,
+    .nav-links a,
+    .nav-toggle span {
+        transition-duration: 0.001ms !important;
+    }
+
+    .card:hover {
+        transform: none;
     }
 }

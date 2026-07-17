@@ -13,7 +13,7 @@
     top: 8px;
     bottom: 8px;
     width: 2px;
-    background: linear-gradient(to bottom, var(--accent), rgba(59, 130, 246, 0.15));
+    background: linear-gradient(to bottom, var(--accent), oklch(63% 0.19 291 / 0.15));
     border-radius: 2px;
 }
 
@@ -71,9 +71,15 @@
 
 .timeline-company {
     font-size: 0.95rem;
-    color: var(--accent-light);
+    color: var(--accent-cyan-light);
     font-weight: 500;
     margin-bottom: 0.75rem;
+}
+
+.timeline-company-note {
+    color: var(--text-secondary);
+    font-weight: 400;
+    font-size: 0.85rem;
 }
 
 .timeline-card ul {

@@ -1,0 +1,16 @@
+# AI agent tooling — not part of the site
+.agents/
+.claude/
+.codex/
+.cursor/
+.gemini/
+.impeccable/
+
+# AI-assist / strategy docs — kept private
+CLAUDE.md
+DESIGN.md
+PRODUCT.md
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
