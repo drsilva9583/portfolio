@@ -16,7 +16,8 @@ Personal portfolio site showcasing my projects, internship experience, and techn
 ## Tech Stack
 
 - **HTML5 / CSS3 / JavaScript** — semantic markup, custom properties, no preprocessors
-- **Google Fonts** — Inter + Space Grotesk
+- **Google Fonts** — Archivo (variable: width 62–125, weight 100–900)
+- **GSAP + ScrollTrigger** — scroll-driven animation, kinetic type, count-ups (CDN)
 - **Devicon** — tech stack icons
 - **Formspree** — serverless form submissions
 - **GitHub Pages** — hosting
@@ -25,17 +26,21 @@ Personal portfolio site showcasing my projects, internship experience, and techn
 
 ```
 portfolio/
-├── index.html                # Home — hero, projects, about, skills
-├── experience.html           # Internship & work experience
+├── index.html                # Home — kinetic hero, selected work, about, toolkit
+├── experience.html           # Internship & work experience (editorial rows)
 ├── education.html            # Academics, leadership, certifications
-├── contact.html              # Contact form
-├── scripts.js                # Scroll reveals, mobile nav, scroll-to-top
+├── contact.html              # Split hero + contact form
+├── scripts.js                # Shared — mobile nav, touchline, year, scroll-to-top
+├── index-animations.js       # Home-only GSAP (hero canvas, nameplate, pitch ball)
+├── page-animations.js        # Inner-page GSAP (reveals, count-ups, magnetic buttons)
 ├── styles/
-│   ├── styles.css            # Global — design tokens, nav, footer, utilities
+│   ├── styles.css            # Global — tokens + shared "Pass Map" primitives, nav, footer
 │   ├── index.css             # Home page
 │   ├── experience.css        # Experience page
 │   ├── education.css         # Education page
 │   └── contact.css           # Contact page
+├── DESIGN.md                 # Design system ("Pass Map")
+├── PRODUCT.md                # Product / brand strategy
 ├── images/                   # Headshot, favicons, logos
 └── README.md
 ```

@@ -1,24 +1,39 @@
-/* ───────── Academic Cards ───────── */
-.academics {
+/* ═══════════════════════════════════════════════════════════════
+   Education — stat cards + leadership (with the soccer/pitch
+   identity motif) + certifications. Shares .card, .statline,
+   .sec-title, .live, .corner-marks, .page-cta from styles.css.
+   ═══════════════════════════════════════════════════════════════ */
+
+.edu-section {
+    padding: 3.2rem 0 1.5rem;
+}
+
+.edu-section .sec-title {
+    margin-bottom: 1.6rem;
+}
+
+.edu-stack {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
-    max-width: 780px;
-    margin: 2rem auto 0;
+    gap: 1.4rem;
+    max-width: 840px;
 }
 
-.academic-card .card {
-    padding: 1.75rem 2rem;
+/* ───────── Cards ───────── */
+.edu-card,
+.lead-card {
+    padding: 1.9rem 2rem;
 }
 
-.academic-card-top {
+.edu-card-top,
+.lead-card-top {
     display: flex;
     align-items: flex-start;
     gap: 1.25rem;
-    margin-bottom: 0.85rem;
+    margin-bottom: 1.1rem;
 }
 
-.academic-logo {
+.edu-logo {
     width: 56px;
     height: 56px;
     object-fit: contain;
@@ -27,188 +42,185 @@
     margin-top: 0.1rem;
 }
 
-.academic-card-top-text {
+.edu-card-headings {
     flex: 1;
     min-width: 0;
 }
 
-.academic-card-header {
+.edu-title-row {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: baseline;
     gap: 1rem;
-    margin-bottom: 0.15rem;
+    margin-bottom: 0.2rem;
+    flex-wrap: wrap;
 }
 
-.academic-card-header h3 {
-    font-size: 1.2rem;
-    font-weight: 700;
+.edu-title-row h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    font-variation-settings: 'wdth' 110, 'wght' 800;
+    letter-spacing: -0.01em;
 }
 
-.academic-date {
-    font-size: 0.8rem;
+.edu-date {
+    font-size: 0.82rem;
     color: var(--text-muted);
     white-space: nowrap;
-    padding-top: 0.2rem;
 }
 
-.academic-degree {
-    font-size: 0.95rem;
+.edu-date .live {
+    color: var(--verde);
+    font-weight: 600;
+}
+
+.edu-degree,
+.lead-org {
+    font-size: 0.98rem;
     color: var(--accent-cyan-light);
     font-weight: 500;
+}
+
+.edu-degree {
     font-style: italic;
 }
 
-.academic-body {
-    font-size: 0.9rem;
-    line-height: 1.7;
-    margin-bottom: 0.5rem;
-}
-
-.academic-highlights {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 1rem;
-}
-
-/* ───────── Leadership ───────── */
-.leadership {
-    padding-top: 2rem;
-}
-
-.leadership-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-    max-width: 780px;
-    margin: 2rem auto 0;
-}
-
-.leadership-card .card {
-    padding: 1.75rem 2rem;
-}
-
-.leadership-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 1rem;
-    margin-bottom: 0.15rem;
-}
-
-.leadership-card-top {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.25rem;
-    margin-bottom: 0.75rem;
-}
-
-.leadership-logo {
-    width: 56px;
-    height: 56px;
-    object-fit: contain;
-    border-radius: var(--radius-sm);
-    flex-shrink: 0;
-    margin-top: 0.1rem;
-}
-
-.leadership-card-top-text {
-    flex: 1;
-    min-width: 0;
-}
-
-.leadership-card-header h3 {
-    font-size: 1.1rem;
-    font-weight: 700;
-}
-
-.leadership-org {
-    font-size: 0.95rem;
-    color: var(--accent-cyan-light);
-    font-weight: 500;
-}
-
-.leadership-org-note {
+.lead-org-note {
     color: var(--text-secondary);
     font-weight: 400;
     font-size: 0.85rem;
+    font-style: normal;
 }
 
-.leadership-card ul {
+.edu-body {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 0.6rem;
+    max-width: 68ch;
+}
+
+.edu-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.1rem;
+}
+
+.lead-card ul {
     list-style: disc;
     padding-left: 1.15rem;
-    margin-bottom: 0.5rem;
+    max-width: 68ch;
+    margin: 0.2rem 0 0.6rem;
 }
 
-.leadership-card li {
-    font-size: 0.88rem;
+.lead-card li {
+    font-size: 0.92rem;
     color: var(--text-secondary);
-    line-height: 1.65;
-    margin-bottom: 0.3rem;
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+    text-wrap: pretty;
 }
 
+/* ───────── Sponsors ───────── */
 .sponsors {
-    margin-top: 1.25rem;
+    margin-top: 1.35rem;
+    padding-top: 1.35rem;
+    border-top: 1px solid var(--border);
 }
 
 .sponsors-label {
-    font-size: 0.85rem;
+    font-size: 0.78rem;
     font-weight: 600;
-    color: var(--text-secondary);
-    margin-bottom: 0.75rem;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 0.9rem;
 }
 
 .sponsor-logos {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
     flex-wrap: wrap;
-    gap: 1.5rem;
+    gap: 1.6rem;
 }
 
 .sponsor-logo {
-    height: 40px;
+    height: 34px;
     width: auto;
     object-fit: contain;
-    opacity: 0.6;
+    opacity: 0.55;
+    filter: grayscale(1);
     transition: filter 0.3s, opacity 0.3s;
 }
 
 .sponsor-logo:hover {
-    filter: grayscale(0) brightness(1.5);
+    filter: grayscale(0) brightness(1.4);
     opacity: 1;
 }
 
-/* ───────── Certifications ───────── */
-.certifications {
-    padding-top: 2rem;
+/* ───────── Soccer captain — pitch/identity card ─────────
+   El Verde is the "in play" signal; here it marks the one card that
+   carries the soccer identity. Corner arcs tinted verde, verde glow
+   on hover, a verde dotted underline on the role. */
+.captain-card {
+    transition: border-color 0.4s, box-shadow 0.4s, transform 0.3s;
 }
 
+.captain-card.corner-marks::before {
+    border-right-color: var(--verde-dim);
+    border-bottom-color: var(--verde-dim);
+}
+
+.captain-card.corner-marks::after {
+    border-left-color: var(--verde-dim);
+    border-top-color: var(--verde-dim);
+}
+
+.captain-card:hover {
+    border-color: var(--verde-dim);
+    box-shadow: 0 0 30px var(--verde-glow);
+}
+
+.captain-mark {
+    text-decoration: underline dotted var(--verde-dim);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+    transition: text-decoration-color 0.3s;
+}
+
+.captain-card:hover .captain-mark {
+    text-decoration-color: var(--verde);
+}
+
+.captain-card .statline dd {
+    color: var(--verde);
+}
+
+/* ───────── Certifications ───────── */
 .cert-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1.25rem;
-    max-width: 780px;
-    margin: 2rem auto 0;
+    max-width: 840px;
 }
 
-.cert-card .card {
-    text-align: center;
-    padding: 1.5rem;
+.cert-card {
+    padding: 1.5rem 1.6rem;
 }
 
 .cert-card h3 {
     font-size: 1.05rem;
     font-weight: 700;
-    margin-bottom: 0.35rem;
+    font-variation-settings: 'wdth' 108, 'wght' 700;
+    margin-bottom: 0.4rem;
 }
 
 .cert-issuer {
     font-size: 0.9rem;
     color: var(--accent-cyan-light);
     font-weight: 500;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.2rem;
 }
 
 .cert-date {
@@ -218,29 +230,30 @@
 
 /* ───────── Responsive ───────── */
 @media (max-width: 700px) {
-    .academic-card .card,
-    .leadership-card .card {
-        padding: 1.25rem 1.5rem;
+    .edu-card,
+    .lead-card {
+        padding: 1.4rem 1.4rem;
     }
 
-    .academic-card-header,
-    .leadership-card-header {
-        flex-direction: column;
-        gap: 0.3rem;
+    .edu-card-top,
+    .lead-card-top {
+        gap: 1rem;
     }
 
-    .academic-logo,
-    .leadership-logo {
+    .edu-logo {
         width: 44px;
         height: 44px;
     }
 
-    .academic-card-top,
-    .leadership-card-top {
-        gap: 1rem;
+    .sponsor-logo {
+        height: 24px;
     }
 
-    .sponsor-logo {
-        height: 22px;
+    .statline {
+        gap: 1rem 1.8rem;
+    }
+
+    .statline > div + div::before {
+        left: -0.9rem;
     }
 }

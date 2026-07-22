@@ -25,6 +25,25 @@ document.addEventListener("DOMContentLoaded", () => {
         yearEl.textContent = new Date().getFullYear();
     }
 
+    // Touchline scroll progress — vanilla, shared across every page.
+    // (No GSAP dependency, so the bar fills even where index-animations.js
+    // isn't loaded.)
+    const touchlineFill = document.querySelector("[data-touchline]");
+    if (touchlineFill) {
+        let ticking = false;
+        const updateTouchline = () => {
+            const max = document.documentElement.scrollHeight - window.innerHeight;
+            const p = max > 0 ? Math.min(1, window.scrollY / max) : 0;
+            touchlineFill.style.transform = "scaleX(" + p + ")";
+            ticking = false;
+        };
+        window.addEventListener("scroll", () => {
+            if (!ticking) { ticking = true; requestAnimationFrame(updateTouchline); }
+        }, { passive: true });
+        window.addEventListener("resize", updateTouchline);
+        updateTouchline();
+    }
+
     const scrollBtn = document.querySelector("[data-scroll-to-top]");
     if (scrollBtn) {
         const toggle = () =>
