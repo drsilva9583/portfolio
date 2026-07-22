@@ -1,129 +1,135 @@
-/* ───────── Timeline ───────── */
-.timeline {
-    position: relative;
-    max-width: 780px;
-    margin: 2.5rem auto 0;
-    padding-left: 36px;
+/* ═══════════════════════════════════════════════════════════════
+   Experience — editorial "pass-map" rows (shares .spotlight-row,
+   .sec-title, .statline, .live, .page-intro from styles.css).
+   ═══════════════════════════════════════════════════════════════ */
+
+.exp-group {
+    padding: 3.5rem 0 1.5rem;
 }
 
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 7px;
-    top: 8px;
-    bottom: 8px;
-    width: 2px;
-    background: linear-gradient(to bottom, var(--accent), oklch(63% 0.19 291 / 0.15));
-    border-radius: 2px;
+.exp-group + .exp-group {
+    padding-top: 1.5rem;
 }
 
-.timeline-item {
-    position: relative;
-    margin-bottom: 2rem;
+.exp-group .sec-title {
+    margin-bottom: 1rem;
 }
 
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -36px;
-    top: 6px;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background: var(--bg-primary);
-    border: 3px solid var(--accent);
-    z-index: 1;
+/* ───────── Editorial role row ───────── */
+.exp-row {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    gap: 2.5rem;
+    padding: 2.8rem 0 3.2rem;
 }
 
-.timeline-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 1.5rem 1.75rem;
-    transition: border-color 0.3s, box-shadow 0.3s;
+.exp-meta {
+    padding-top: 0.55rem;
 }
 
-.timeline-card:hover {
-    border-color: var(--border-hover);
-    box-shadow: var(--shadow-glow);
-}
-
-.timeline-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 1rem;
-    margin-bottom: 0.2rem;
-}
-
-.timeline-card-header h3 {
-    font-size: 1.1rem;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-}
-
-.timeline-date {
-    font-size: 0.78rem;
-    color: var(--text-muted);
-    white-space: nowrap;
-    padding-top: 0.1rem;
-}
-
-.timeline-company {
-    font-size: 0.95rem;
-    color: var(--accent-cyan-light);
-    font-weight: 500;
-    margin-bottom: 0.75rem;
-}
-
-.timeline-company-note {
-    color: var(--text-secondary);
-    font-weight: 400;
+.exp-date {
     font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
 }
 
-.timeline-card ul {
+.exp-date .live {
+    color: var(--verde);
+    font-weight: 600;
+}
+
+.exp-company {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent-cyan-light);
+    line-height: 1.4;
+    text-wrap: balance;
+}
+
+.exp-note {
+    margin-top: 0.35rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.exp-title {
+    font-size: clamp(1.45rem, 2.7vw, 2.05rem);
+    font-weight: 800;
+    font-variation-settings: 'wdth' 114, 'wght' 800;
+    letter-spacing: -0.02em;
+    line-height: 1.14;
+    color: var(--text-primary);
+    margin-bottom: 1.1rem;
+    text-wrap: balance;
+}
+
+.exp-points {
     list-style: disc;
     padding-left: 1.15rem;
-    margin-bottom: 1.15rem;
+    max-width: 68ch;
+    margin-bottom: 1.4rem;
 }
 
-.timeline-card li {
-    font-size: 0.88rem;
+.exp-points li {
+    font-size: 0.95rem;
     color: var(--text-secondary);
-    line-height: 1.65;
-    margin-bottom: 0.3rem;
+    line-height: 1.7;
+    margin-bottom: 0.45rem;
+    text-wrap: pretty;
 }
 
-.timeline-pills {
+.exp-tech {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.4rem;
+    gap: 0.45rem;
 }
 
+/* .page-cta (closing CTA) lives in styles.css — shared by experience
+   and education. */
+
 /* ───────── Responsive ───────── */
-@media (max-width: 700px) {
-    .timeline {
-        padding-left: 28px;
+@media (max-width: 860px) {
+    .exp-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 2.2rem 0 2.6rem;
     }
 
-    .timeline::before {
-        left: 5px;
+    .exp-meta {
+        padding-top: 0;
+        display: flex;
+        align-items: baseline;
+        gap: 0.9rem;
+        flex-wrap: wrap;
     }
 
-    .timeline-item::before {
-        left: -28px;
-        width: 12px;
-        height: 12px;
-        top: 8px;
+    .exp-date {
+        margin-bottom: 0;
+        order: 2;
     }
 
-    .timeline-card {
-        padding: 1.25rem;
+    .exp-company {
+        order: 1;
     }
 
-    .timeline-card-header {
-        flex-direction: column;
-        gap: 0.35rem;
+    .exp-note {
+        order: 3;
+        flex-basis: 100%;
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .exp-group {
+        padding-top: 2.5rem;
+    }
+
+    .statline {
+        gap: 1rem 1.8rem;
+    }
+
+    .statline > div + div::before {
+        left: -0.9rem;
     }
 }

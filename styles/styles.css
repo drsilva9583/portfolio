@@ -20,6 +20,13 @@
     --accent-cyan: oklch(68% 0.14 196);
     --accent-cyan-light: oklch(80% 0.10 196);
 
+    /* Third signal — El Verde. Desaturated pitch green with exactly one
+       meaning: "live / in play". Violet stays interactive, teal stays
+       metadata (Two-Signal Rule, deliberately revisited site-wide). */
+    --verde: oklch(68% 0.11 158);
+    --verde-dim: oklch(68% 0.11 158 / 0.4);
+    --verde-glow: oklch(68% 0.11 158 / 0.14);
+
     --border: rgba(255, 255, 255, 0.08);
     --border-hover: oklch(63% 0.19 291 / 0.5);
 
@@ -315,6 +322,35 @@ main {
     background: var(--accent-glow);
 }
 
+/* ───────── Social icon buttons (shared) ───────── */
+.hero-socials {
+    display: flex;
+    gap: 0.65rem;
+}
+
+.hero-socials a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.hero-socials a:hover {
+    border-color: var(--accent);
+    color: var(--accent-light);
+    background: var(--accent-glow);
+}
+
+.hero-socials svg {
+    width: 18px;
+    height: 18px;
+}
+
 /* ───────── Card ───────── */
 .card {
     background: var(--bg-card);
@@ -478,6 +514,331 @@ footer {
     height: 16px;
 }
 
+/* ═══════════════════════════════════════════════════════════════
+   Pass Map — shared primitives (promoted from index.css so all four
+   pages share one design language: ambient field, touchline, section
+   voice, live signal, statline, page intro, spotlight rows).
+   ═══════════════════════════════════════════════════════════════ */
+
+html,
+body {
+    overflow-x: clip;
+}
+
+/* One continuous ambient field behind the whole page — a single layer of
+   alternating violet/teal blooms that steps down the full document height,
+   so the lower page never falls back to flat black. */
+body {
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        radial-gradient(46% 16% at 82% 8%,  oklch(63% 0.19 291 / 0.16), transparent 62%),
+        radial-gradient(42% 15% at 8% 20%,  oklch(68% 0.14 196 / 0.11), transparent 64%),
+        radial-gradient(44% 14% at 86% 33%, oklch(68% 0.14 196 / 0.09), transparent 66%),
+        radial-gradient(46% 14% at 18% 46%, oklch(63% 0.19 291 / 0.10), transparent 66%),
+        radial-gradient(44% 14% at 84% 60%, oklch(63% 0.19 291 / 0.09), transparent 66%),
+        radial-gradient(46% 14% at 14% 74%, oklch(68% 0.14 196 / 0.09), transparent 66%),
+        radial-gradient(44% 14% at 82% 88%, oklch(63% 0.19 291 / 0.10), transparent 66%);
+}
+
+::selection {
+    background: oklch(63% 0.19 291 / 0.4);
+    color: var(--text-primary);
+}
+
+/* ───────── Section heading voice (no eyebrows) ───────── */
+.sec-title {
+    font-size: clamp(1.9rem, 3vw, 2.4rem);
+    font-weight: 800;
+    font-variation-settings: 'wdth' 112, 'wght' 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    text-wrap: balance;
+}
+
+.sec-sub {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    max-width: 56ch;
+    margin-top: 0.6rem;
+    text-wrap: pretty;
+}
+
+/* ───────── Page intro (inner-page kinetic header) ───────── */
+.page-intro {
+    position: relative;
+    padding: 4.5rem 0 3.5rem;
+}
+
+.page-intro-title {
+    font-family: var(--font-heading);
+    /* 2rem floor so single-word titles (EXPERIENCE / EDUCATION) fit on
+       narrow phones without the expanded-black type bleeding off-screen. */
+    font-size: clamp(2rem, 8vw, 5rem);
+    font-weight: 900;
+    font-variation-settings: 'wdth' 125, 'wght' 900;
+    line-height: 0.96;
+    letter-spacing: -0.015em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    margin-bottom: 1.4rem;
+}
+
+.page-intro-title .ch {
+    display: inline-block;
+}
+
+.page-intro .sec-sub {
+    font-size: 1.15rem;
+    max-width: 52ch;
+}
+
+.page-intro-live {
+    margin-top: 1.4rem;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.page-intro-live .live {
+    color: var(--verde);
+    font-weight: 600;
+}
+
+/* Intro gate — JS-orchestrated; the page is fully visible without JS.
+   Only the above-the-fold page-intro is held back to avoid a flash before
+   the entrance animation; page-animations.js releases it. */
+html.intro .page-intro-title .ch,
+html.intro .page-intro-title,
+html.intro .page-intro .sec-sub,
+html.intro .page-intro-live,
+html.intro .contact-direct,
+html.intro .contact-card {
+    opacity: 0;
+}
+
+/* ───────── Touchline scroll progress ───────── */
+.touchline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    z-index: 1001;
+    pointer-events: none;
+}
+
+.touchline-fill {
+    position: absolute;
+    inset: 0;
+    background: var(--verde);
+    transform: scaleX(0);
+    transform-origin: left center;
+    box-shadow: 0 0 8px var(--verde-dim);
+}
+
+.touchline-mid {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 1px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.28);
+}
+
+/* ───────── Live signal ───────── */
+.live {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    white-space: nowrap;
+}
+
+.live-dot {
+    position: relative;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--verde);
+    flex-shrink: 0;
+}
+
+.live-dot::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    border: 1px solid var(--verde);
+    animation: live-pulse 2.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+@keyframes live-pulse {
+    0%   { transform: scale(0.55); opacity: 0.9; }
+    70%, 100% { transform: scale(1.7); opacity: 0; }
+}
+
+/* ───────── Statline (scoreboard) ───────── */
+.statline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.1rem 2.6rem;
+    margin: 0.4rem 0 1.5rem;
+}
+
+.statline > div {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.statline > div + div::before {
+    content: '';
+    position: absolute;
+    left: -1.3rem;
+    top: 12%;
+    bottom: 12%;
+    width: 1px;
+    background: var(--border);
+}
+
+.statline dd {
+    font-family: var(--font-heading);
+    font-size: clamp(1.9rem, 2.8vw, 2.5rem);
+    font-weight: 850;
+    font-variation-settings: 'wdth' 118, 'wght' 850;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+    color: var(--text-primary);
+}
+
+.statline dt {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    letter-spacing: 0.03em;
+    margin-top: 0.3rem;
+}
+
+/* ───────── Spotlight row (editorial list row, shared) ─────────
+   Rule that draws across on scroll, a stretched title link, and a
+   cursor spotlight on desktop pointers. Reused by .exp-row. */
+.spotlight-row {
+    position: relative;
+}
+
+.spotlight-rule {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--border);
+}
+
+@media (pointer: fine) {
+    .spotlight-row::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(340px circle at var(--mx, 50%) var(--my, 50%),
+            oklch(63% 0.19 291 / 0.075), transparent 68%);
+        -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+                mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+        opacity: 0;
+        transition: opacity 0.45s;
+        pointer-events: none;
+    }
+
+    .spotlight-row:hover::after {
+        opacity: 1;
+    }
+}
+
+/* ───────── Corner-arc marks (pitch-geometry accent, shared) ───────── */
+.corner-marks {
+    position: relative;
+}
+
+.corner-marks::before,
+.corner-marks::after {
+    content: '';
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    pointer-events: none;
+}
+
+.corner-marks::before {
+    top: -12px;
+    left: -12px;
+    border-radius: 0 0 100% 0;
+    border-right: 1.5px solid oklch(68% 0.14 196 / 0.55);
+    border-bottom: 1.5px solid oklch(68% 0.14 196 / 0.55);
+}
+
+.corner-marks::after {
+    bottom: -12px;
+    right: -12px;
+    border-radius: 100% 0 0 0;
+    border-left: 1.5px solid oklch(63% 0.19 291 / 0.55);
+    border-top: 1.5px solid oklch(63% 0.19 291 / 0.55);
+}
+
+/* ───────── Closing CTA (shared: experience + education) ───────── */
+.page-cta {
+    position: relative;
+    padding: 5.5rem 0 6.5rem;
+    margin-top: 2rem;
+    border-top: 1px solid var(--border);
+}
+
+.page-cta::before {
+    content: '';
+    position: absolute;
+    top: 12%;
+    left: -120px;
+    width: 520px;
+    height: 340px;
+    background: radial-gradient(ellipse, oklch(63% 0.19 291 / 0.07), transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.page-cta-title {
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    font-weight: 900;
+    font-variation-settings: 'wdth' 125, 'wght' 900;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin-bottom: 1.3rem;
+    color: var(--text-primary);
+}
+
+.page-cta-text {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.75;
+    max-width: 52ch;
+    margin-bottom: 2.2rem;
+    text-wrap: pretty;
+}
+
+.page-cta-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
 /* ───────── Responsive ───────── */
 @media (max-width: 768px) {
     .nav-toggle {
@@ -536,6 +897,18 @@ footer {
     .page-header h1 {
         font-size: 2rem;
     }
+
+    .page-intro {
+        padding: 3.5rem 0 2.5rem;
+    }
+
+    .page-cta {
+        padding: 4rem 0 4.5rem;
+    }
+
+    .page-cta-actions {
+        width: 100%;
+    }
 }
 
 @media (max-width: 480px) {
@@ -553,6 +926,19 @@ footer {
     .reveal {
         opacity: 1;
         transform: none;
+        transition: none;
+    }
+
+    .live-dot::after {
+        animation: none;
+        opacity: 0;
+    }
+
+    .spotlight-row::after {
+        display: none;
+    }
+
+    .touchline-fill {
         transition: none;
     }
 

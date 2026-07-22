@@ -15,24 +15,8 @@
         document.documentElement.classList.remove("intro");
     }
 
-    /* ─────────────────────────────────────────────────────────────
-       Touchline scroll progress (no library needed)
-       ───────────────────────────────────────────────────────────── */
-    (function touchline() {
-        var fill = document.querySelector("[data-touchline]");
-        if (!fill) return;
-        var ticking = false;
-        function update() {
-            var max = document.documentElement.scrollHeight - innerHeight;
-            fill.style.transform = "scaleX(" + (max > 0 ? Math.min(1, scrollY / max) : 0) + ")";
-            ticking = false;
-        }
-        addEventListener("scroll", function () {
-            if (!ticking) { ticking = true; requestAnimationFrame(update); }
-        }, { passive: true });
-        addEventListener("resize", update);
-        update();
-    })();
+    /* Touchline scroll progress now lives in scripts.js (shared across
+       every page), so it is intentionally not duplicated here. */
 
     /* ─────────────────────────────────────────────────────────────
        Pitch easter egg — hover "soccer team captain"
